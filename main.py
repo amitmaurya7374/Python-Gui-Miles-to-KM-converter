@@ -2,6 +2,15 @@ from tkinter import *
 
 window = Tk()
 kilometers = 0
+
+
+def caluclate():
+    """Convert miles to Km"""
+    result = user_input.get()
+    kilometers_ = round(int(result) / 0.62137)
+    converted_result.config(text=f"{kilometers_}")
+
+
 window.title("Miles to Km Converter")
 window.minsize(height=200, width=400)
 window.config(padx=20, pady=20)
@@ -21,13 +30,7 @@ converted_result.grid(column=2, row=1)
 km_label = Label(text="Km", font=("Arial", 16, "normal"))
 km_label.grid(column=3, row=1)
 
-
 # Button
-def caluclate():
-    """Convert miles to Km"""
-    print("Convert miles to Km")
-
-
 button = Button(text="calculate", command=caluclate)
 button.grid(column=2, row=3)
 window.mainloop()
